@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shodan for YouTube</title>
+    <link rel="shortcut icon" href="logoicon.png" type="image/x-icon">
+    <style>
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      * {
+        background-color: #000000 ;
+        color: aliceblue;
+        font-size: larger;
+      }
+      .button-36 {
+        background-image: linear-gradient(
+          92.88deg,
+          #455eb5 9.16%,
+          #5643cc 43.89%,
+          #673fd7 64.72%
+        );
+        border-radius: 8px;
+        border-style: none;
+        box-sizing: border-box;
+        color: #ffffff;
+        cursor: pointer;
+        flex-shrink: 0;
+        font-family: "Inter UI", "SF Pro Display", -apple-system,
+          BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+          "Open Sans", "Helvetica Neue", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        width: 100%;
+        height: 4rem;
+        padding: 0 1.6rem;
+        text-align: center;
+        text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+        transition: all 0.5s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+
+      .button-36:hover {
+        box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+        transition-duration: 0.1s;
+        font-size: xx-large;
+      }
+
+      @media (min-width: 768px) {
+        .button-36 {
+          padding: 0 2.6rem;
+        }
+      }
+      .center {
+        margin: auto;
+        width: 60%;
+        border: 5px solid #000000;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body onload="clearText()">
+    <div class="center">
+      <input
+        type="text"
+        id="youtube"
+        name="lastname"
+        placeholder="Enter Youtube Search Query..."
+      />
+      <!-- <label for="fname">Search Google</label>
+      <input
+        type="text"
+        id="google"
+        name="firstname"
+        placeholder="Enter Search Query.."
+      />
+
+      <button
+        class="button-36"
+        role="button"
+        id="myBtngl"
+        value="Google"
+        onclick="buttonclickgl()"
+      >
+        Google
+      </button>
+       -->
+       <br><br>
+      <button
+        class="button-36"
+        role="button"
+        id="myBtnyt"
+        value="Youtube"
+        onclick="ytbuttonclick()"
+      >
+        Youtube
+      </button>
+
+    </div>
+    <script>
+    //   var inp = window.prompt();
+    //   if (inp === "G" || inp === "g") {
+    //     document.getElementById("google").focus();
+    //   } else {
+    //     document.getElementById("youtube").focus();
+    //   }
+
+      function clearText() {
+        document.getElementById("youtube").value = "";
+        document.getElementById("google").value = "";
+      }
+
+      function ytbuttonclick() {
+        var inputhaakdha = document.getElementById("youtube").value;
+        window.location =
+          "https://www.youtube.com/results?search_query=" + inputhaakdha;
+      }
+        window.onload = function() {
+            document.getElementById("youtube").focus();
+        }      
+      var input = document.getElementById("youtube");
+      input.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          document.getElementById("myBtnyt").click();
+        }
+      });
+      function buttonclickgl() {
+        var inputhaakdha = document.getElementById("google").value;
+        window.location =
+          "https://www.google.com/search?q=" +
+          inputhaakdha +
+          "&oq=" +
+          inputhaakdha +
+          "&aqs=chrome..69i57j6j46i10i131i199i433i465i512j0i10i131i433i512l3j0i512j0i10i131i433i512j0i10i512.3509j0j7&sourceid=chrome&ie=UTF-8";
+      }
+      var input = document.getElementById("google");
+      input.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          document.getElementById("myBtngl").click();
+        }
+      });
+    </script>
+  </body>
+</html>
